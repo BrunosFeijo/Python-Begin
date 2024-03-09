@@ -10,3 +10,4 @@ lista = [
     if numero % 2 == 0
 ]
 print(lista)
+print(sum(lista))
