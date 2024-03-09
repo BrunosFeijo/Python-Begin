@@ -9,9 +9,10 @@ def criaListaMultiplos(start, stop, numeroBase):
     ]
     return listaMultiplos
 
+
 start = 100
 stop = 300
 listaMultiplosCinco = criaListaMultiplos(start, stop, 5)
-listaMultiplosSeis = criaListaMultiplos(start,stop,6)
-print('Multiplos 5:',listaMultiplosCinco)
+listaMultiplosSeis = criaListaMultiplos(start, stop, 6)
+print('Multiplos 5:', listaMultiplosCinco)
 print('Multiplos 6:', listaMultiplosSeis)
