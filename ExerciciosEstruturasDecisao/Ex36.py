@@ -18,6 +18,6 @@ def operacao(n1, n2, operador):
 
 
 num1 = float(input('Digite o primeiro valor: '))
-operador = input('Digite a operação: [+,-,*,/,]: ').strip()
+operador = input('Digite a operação: [+,-,*,/]: ').strip()
 num2 = float(input('Digite o segundo valor: '))
 print(operacao(num1, num2, operador))
