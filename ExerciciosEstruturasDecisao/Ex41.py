@@ -2,7 +2,7 @@
 # e 150
 numeros = [
     numero
-    for numero in range(50,151)
+    for numero in range(50, 151)
     if numero % 2 == 0
 ]
 
