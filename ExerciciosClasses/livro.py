@@ -1,5 +1,6 @@
 from datetime import datetime
 
+from autor import Autor
 from genero import Genero
 
 
@@ -23,6 +24,7 @@ class Livro:
         self.isbn = isbn
         self.publicacao = publicacao
         self.genero = genero
+        self.autores = []
 
     def __str__(self):
         retorno = f'Código: {self.cod} \nTítulo: {self.titulo} \nResumo: {self.resumo} \nIsbn: {self.isbn} \nPublicacao: {self.publicacao} \nGenero: {self.genero.value}'
@@ -64,3 +66,21 @@ class Livro:
 
     def set_genero(self, genero):
         self.genero = genero
+
+    def add_autor(self, autor):
+        if not isinstance(autor, Autor):
+            return False
+        self.autores.append(autor)
+        return True
+
+    def remove_autor(self, autor):
+        if not isinstance(autor, Autor):
+            return False
+        if autor in self.autores:
+            self.autores.remove(autor)
+            return True
+        else:
+            return False
+
+    def listar_autors(self):
+        return self.autores
