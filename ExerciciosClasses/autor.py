@@ -1,7 +1,7 @@
 from datetime import datetime
 
+from ExerciciosClasses.livro import Livro
 from pais import Pais
-from livro import Livro
 from pessoa import Pessoa
 
 

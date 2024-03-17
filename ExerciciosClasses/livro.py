@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from autor import Autor
+from ExerciciosClasses.autor import Autor
 from genero import Genero
 
 
