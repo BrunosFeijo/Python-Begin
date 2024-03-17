@@ -1,7 +1,11 @@
+from ExerciciosClasses.pais import Pais
+
+
 class Pessoa:
-    def __init__(self, nome, data_nascimento):
+    def __init__(self, nome, data_nascimento, pais):
         self.nome = nome
         self.data_nascimento = data_nascimento
+        self.pais = pais
 
     def get_data_nascimento(self):
         return self.data_nascimento
@@ -14,3 +18,9 @@ class Pessoa:
 
     def set_nome(self, nome):
         self.nome = nome
+
+    def get_pais(self):
+        return self.pais
+
+    def set_pais(self, pais):
+        self.pais = pais

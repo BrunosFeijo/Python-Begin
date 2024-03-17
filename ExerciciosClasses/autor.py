@@ -1,23 +1,24 @@
 from datetime import datetime
 
+from pais import Pais
 from livro import Livro
 from pessoa import Pessoa
 
 
 class Autor(Pessoa):
-    def __init__(self, nome, data_nascimento, pseudonimo):
+    def __init__(self, nome, data_nascimento, pseudonimo, pais=Pais.BRASIL):
         if not isinstance(nome, str) or not isinstance(pseudonimo, str):
             raise TypeError('O nome/pseudonimo deve ser uma string')
         if not isinstance(data_nascimento, datetime):
             raise TypeError('A data de nascimento deve ser do tipo datetime')
 
-        super().__init__(nome, data_nascimento)
+        super().__init__(nome, data_nascimento, pais)
         self.trabalhos = []
         self.pseudonimo = pseudonimo
 
     def __str__(self):
 
-        retorno = f'Nome: {self.nome} \nData nascimento: {self.data_nascimento} \nPseudonimo: {self.pseudonimo} \nTrabalhos: {self.trabalhos}'
+        retorno = f'Nome: {self.nome} \nData nascimento: {self.data_nascimento} \nPseudonimo: {self.pseudonimo} \nPais: {self.pais} \nTrabalhos: {self.trabalhos}'
         if len(self.trabalhos) > 0:
             retorno += f' \nTrabalhos Teste'
         return retorno
