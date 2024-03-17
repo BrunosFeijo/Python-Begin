@@ -18,9 +18,13 @@ class Autor(Pessoa):
 
     def __str__(self):
 
-        retorno = f'Nome: {self.nome} \nData nascimento: {self.data_nascimento} \nPseudonimo: {self.pseudonimo} \nPais: {self.pais} \nTrabalhos: {self.trabalhos}'
+        retorno = f'Nome: {self.nome} \nData nascimento: {self.data_nascimento} \nPseudonimo: {self.pseudonimo} \nPais: {self.pais}'
         if len(self.trabalhos) > 0:
-            retorno += f' \nTrabalhos Teste'
+            retorno += '\n' + "-" * 10 + 'Trabalhos' + "-" * 10
+            for trabalho in self.trabalhos:
+                retorno += f'\n{trabalho}\n'
+                if not trabalho == self.trabalhos[-1]:
+                    retorno += '-' * 30
         return retorno
 
     def adicionar_trabalho(self, livro):

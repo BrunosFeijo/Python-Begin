@@ -1,8 +1,10 @@
 from datetime import datetime
 
+from genero import Genero
+
 
 class Livro:
-    def __init__(self, cod: str, titulo: str, resumo: str, isbn: str, publicacao: datetime):
+    def __init__(self, cod: str, titulo: str, resumo: str, isbn: str, publicacao: datetime, genero=Genero.FANTASIA):
         if not isinstance(cod, str) or not len(cod) == 10:
             print(len(cod), type(cod))
             raise TypeError(f'Um código deve ser uma string de 10 caracteres.')
@@ -20,9 +22,10 @@ class Livro:
         self.resumo = resumo
         self.isbn = isbn
         self.publicacao = publicacao
+        self.genero = genero
 
     def __str__(self):
-        retorno = f'Código: {self.cod} \nTítulo: {self.titulo} \nResumo: {self.resumo} \nIsbn: {self.isbn} \nPublicacao: {self.publicacao}'
+        retorno = f'Código: {self.cod} \nTítulo: {self.titulo} \nResumo: {self.resumo} \nIsbn: {self.isbn} \nPublicacao: {self.publicacao} \nGenero: {self.genero.value}'
 
         return retorno
 
@@ -56,3 +59,8 @@ class Livro:
     def set_publicacao(self, publicacao):
         self.publicacao = publicacao
 
+    def get_genero(self):
+        return self.genero
+
+    def set_genero(self, genero):
+        self.genero = genero
