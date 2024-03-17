@@ -1,19 +1,26 @@
 from datetime import datetime
 
-from ExerciciosClasses import Livro
-from ExerciciosClasses import Pessoa
+from livro import Livro
+from pessoa import Pessoa
 
 
 class Autor(Pessoa):
     def __init__(self, nome, data_nascimento, pseudonimo):
-        if not isinstance((nome, pseudonimo), str):
+        if not isinstance(nome, str) or not isinstance(pseudonimo, str):
             raise TypeError('O nome/pseudonimo deve ser uma string')
         if not isinstance(data_nascimento, datetime):
             raise TypeError('A data de nascimento deve ser do tipo datetime')
 
-        super(nome,data_nascimento)
-        self.trabalhos = None
+        super().__init__(nome, data_nascimento)
+        self.trabalhos = []
         self.pseudonimo = pseudonimo
+
+    def __str__(self):
+
+        retorno = f'Nome: {self.nome} \nData nascimento: {self.data_nascimento} \nPseudonimo: {self.pseudonimo} \nTrabalhos: {self.trabalhos}'
+        if len(self.trabalhos) > 0:
+            retorno += f' \nTrabalhos Teste'
+        return retorno
 
     def adicionar_trabalho(self, livro):
         if not isinstance(livro, Livro):
