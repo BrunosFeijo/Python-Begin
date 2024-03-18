@@ -81,5 +81,5 @@ class Livro:
         else:
             return False
 
-    def listar_autors(self):
+    def listar_autores(self):
         return self.autores

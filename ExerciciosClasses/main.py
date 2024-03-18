@@ -17,8 +17,11 @@ editora = Editora("1234567890", "Editora Exemplo", "Exemplo Fantasia", "exemplo@
 editora.publicar(livro1)
 editora.publicar(livro2)
 
+livro1.remove_autor(autor)
 
 print('-' * 40)
 print(autor)
 print('-' * 40)
 print(editora)
+print('-' * 40)
+print(livro1.listar_autores())  # vazio
