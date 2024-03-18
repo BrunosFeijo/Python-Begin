@@ -1,6 +1,5 @@
 from datetime import datetime
 
-from ExerciciosClasses.livro import Livro
 from pais import Pais
 from pessoa import Pessoa
 
@@ -28,7 +27,7 @@ class Autor(Pessoa):
         return retorno
 
     def adicionar_trabalho(self, livro):
-        if not isinstance(livro, Livro):
+        if not "Livro" == type(livro).__name__:
             raise TypeError('O livro precisa ser do tipo Livro')
         self.trabalhos.append(livro)
 

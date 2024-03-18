@@ -1,6 +1,5 @@
 from datetime import datetime
 
-from ExerciciosClasses.autor import Autor
 from genero import Genero
 
 
@@ -68,13 +67,13 @@ class Livro:
         self.genero = genero
 
     def add_autor(self, autor):
-        if not isinstance(autor, Autor):
+        if not "Autor" == type(autor).__name__:
             return False
         self.autores.append(autor)
         return True
 
     def remove_autor(self, autor):
-        if not isinstance(autor, Autor):
+        if not "Autor" == type(autor).__name__:
             return False
         if autor in self.autores:
             self.autores.remove(autor)
