@@ -6,16 +6,15 @@ from genero import Genero
 class Livro:
     def __init__(self, cod: str, titulo: str, resumo: str, isbn: str, publicacao: datetime, genero=Genero.FANTASIA):
         if not isinstance(cod, str) or not len(cod) == 10:
-            print(len(cod), type(cod))
-            raise TypeError(f'Um código deve ser uma string de 10 caracteres.')
+            raise ValueError(f'Um código deve ser uma string de 10 caracteres.')
         if not isinstance(titulo, str) or not 1 <= len(titulo) <= 100:
-            raise TypeError('Um código deve ser uma string de 1 a 100 caracteres')
+            raise ValueError('Um código deve ser uma string de 1 a 100 caracteres')
         if not isinstance(resumo, str) or not 10 <= len(resumo) <= 500:
-            raise TypeError('Uma resumo deve ser uma string de 10 a 500 caracteres')
+            raise ValueError('Uma resumo deve ser uma string de 10 a 500 caracteres')
         if not isinstance(isbn, str) or not len(isbn) == 13:
-            raise TypeError('Um isbn deve ser uma string de 13 caracteres')
+            raise ValueError('Um isbn deve ser uma string de 13 caracteres')
         if not isinstance(publicacao, datetime):
-            raise TypeError('Um publicacao deve ser um datetime')
+            raise ValueError('Um publicacao deve ser um datetime')
 
         self.cod = cod
         self.titulo = titulo

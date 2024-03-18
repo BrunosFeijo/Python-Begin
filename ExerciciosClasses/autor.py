@@ -7,9 +7,9 @@ from pessoa import Pessoa
 class Autor(Pessoa):
     def __init__(self, nome, data_nascimento, pseudonimo, pais=Pais.BRASIL):
         if not isinstance(nome, str) or not isinstance(pseudonimo, str):
-            raise TypeError('O nome/pseudonimo deve ser uma string')
+            raise ValueError('O nome/pseudonimo deve ser uma string')
         if not isinstance(data_nascimento, datetime):
-            raise TypeError('A data de nascimento deve ser do tipo datetime')
+            raise ValueError('A data de nascimento deve ser do tipo datetime')
 
         super().__init__(nome, data_nascimento, pais)
         self.trabalhos = []
