@@ -14,7 +14,7 @@ try:
     autor.adicionar_trabalho(livro2)
     livro2.add_autor(autor)
 
-    editora = Editora("123457890", "Editora Exemplo", "Exemplo Fantasia", "exemplo@email.com")
+    editora = Editora("1234567890", "Editora Exemplo", "Exemplo Fantasia", "exemplo@email.com")
     editora.publicar(livro1)
     editora.publicar(livro2)
 
