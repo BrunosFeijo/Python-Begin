@@ -65,7 +65,7 @@ class Editora:
     def listar_livros(self) -> list:
         return self.__livros
 
-    def publicacao(self, livro: Livro) -> None:
+    def publicar(self, livro: Livro) -> None:
         try:
             if isinstance(livro, Livro):
                 livro.editora = self
